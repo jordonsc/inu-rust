@@ -76,6 +76,11 @@ impl<'s> Kernel<'s> {
         &self.settings
     }
 
+    pub fn restart() -> ! {
+        log::warn!(target: LOG_TGT, "Restarting device..");
+        esp_idf_svc::hal::reset::restart();
+    }
+
     pub async fn connect_wifi(&mut self) -> Result<(), OsError> {
         let ssid = heapless::String::<32>::from_str(self.get_settings().wifi.access_point.as_str())
             .map_err(|_| OsError::Generic("Cannot parse wifi SSID".into()))?;
