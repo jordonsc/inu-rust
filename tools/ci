@@ -1,0 +1,5 @@
+#!/bin/env bash
+
+cargo fmt --check --all
+cargo fmt --all
+cargo clippy --release --all-features --workspace -- -D warnings

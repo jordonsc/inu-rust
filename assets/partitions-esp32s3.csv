@@ -1,0 +1,6 @@
+# See: https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-guides/partition-tables.html
+# Name,   Type, SubType, Offset,  Size,   Flags
+cfg,      data, nvs,     0x9000,  0x4000,
+otadata,  data, ota,     0xd000,  0x2000,
+factory,  app,  factory, 0x10000,  2M,
+ota_0,    app,  ota_0,   0x210000, 2M,
