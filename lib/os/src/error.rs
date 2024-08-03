@@ -41,6 +41,12 @@ impl From<serde_json::Error> for OsError {
     }
 }
 
+impl From<std::io::Error> for OsError {
+    fn from(e: std::io::Error) -> Self {
+        OsError::Generic(format!("I/O error: {}", e))
+    }
+}
+
 #[derive(Debug)]
 pub enum WifiError {
     Unknown(String),

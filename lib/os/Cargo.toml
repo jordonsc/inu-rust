@@ -12,7 +12,9 @@ esp32s3 = []
 [dependencies]
 log = { version = "0.4.22" }
 esp-idf-svc = { version = "0.49.0" }
+esp-idf-hal = { version = "0.44.1" }
 md5 = { version = "0.7.0" }
 serde_json = { version = "1.0.121" }
 serde = { version = "1.0.204", features = ["derive"] }
 heapless = { version = "0.8.0" }
+futures = { version = "0.3.30" }

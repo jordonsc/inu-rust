@@ -119,6 +119,12 @@ impl DelayOptions {
             min_transition_time: None,
         }
     }
+
+    pub fn tnx_ms(ms: u64) -> Self {
+        Self {
+            min_transition_time: Some(Duration::from_millis(ms)),
+        }
+    }
 }
 
 impl Default for DelayOptions {
